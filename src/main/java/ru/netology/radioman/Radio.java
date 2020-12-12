@@ -4,6 +4,7 @@ import java.security.PrivateKey;
 
 public class Radio {
     private int currentNumberStation;
+    private int enterNumberStation;
     private int currentSoundVolume;
 
     public void setCurrentNumberStation(int currentNumberStation) {
@@ -28,9 +29,13 @@ public class Radio {
             return;
         }
         currentNumberStation++;
-
     }
 
+    public void numberStationPrev() {
+        if (currentNumberStation == 0) currentNumberStation = 10;
+        currentNumberStation--;
+
+    }
 
     public void volumeStationUp() {
         if (currentSoundVolume >= 10) {

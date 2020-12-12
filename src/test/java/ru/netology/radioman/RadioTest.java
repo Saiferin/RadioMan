@@ -9,10 +9,10 @@ class RadioTest {
     private  Radio newRadio = new Radio();
 
     @Test
-    public void numberStationEnter() {
-        int enterNumberStation = 7;
+    public void numberStationEntered() {
+        int enteredNumberStation = 7;
         int expected = 7;
-        newRadio.setCurrentNumberStation(enterNumberStation);
+        newRadio.setCurrentNumberStation(enteredNumberStation);
         int actual = newRadio.getCurrentNumberStation();
         assertEquals(expected, actual);
     }
@@ -24,7 +24,6 @@ class RadioTest {
             "NumberStationForward,9,0",
     })
     public void numberStationNext(String name, int currentNumberStation, int expected) {
-
         newRadio.setCurrentNumberStation(currentNumberStation);
         newRadio.numberStationNext();
         int actual = newRadio.getCurrentNumberStation();
@@ -34,13 +33,12 @@ class RadioTest {
 
     @ParameterizedTest
     @CsvSource({
-            "volumeUpFrom_0,0,1",
-            "volumeUpFrom_5,5,6",
-            "volumeUpFrom_max,10,10"
+            "volumeUp_0,0,1",
+            "volumeUp_5,5,6",
+            "volumeUp_max,10,10"
 
     })
     public void volumeStationUp(String name, int currentSoundVolume, int expected) {
-
         newRadio.setCurrentSoundVolume(currentSoundVolume);
         newRadio.volumeStationUp();
         int actual = newRadio.getCurrentSoundVolume();
@@ -53,8 +51,7 @@ class RadioTest {
             "volumeDown_6,6,5",
             "volumeDown_min,0,0"
     })
-    public void volumeStationDown(String name, int currentSoundVolume, int expected) {
-
+    public void volumeStationDoun(String name, int currentSoundVolume, int expected) {
         newRadio.setCurrentSoundVolume(currentSoundVolume);
         newRadio.volumeStationDown();
         int actual = newRadio.getCurrentSoundVolume();
