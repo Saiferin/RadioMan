@@ -31,10 +31,6 @@ public class Radio {
 
     }
 
-    public void numberStationPrev() {
-        if (currentNumberStation == 0) currentNumberStation = 10;
-        currentNumberStation--;
-    }
 
     public void volumeStationUp() {
         if (currentSoundVolume >= 10) {

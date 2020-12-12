@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Radio.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">RadioMan</a> &gt; <a href="index.source.html" class="el_package">ru.netology.radioman</a> &gt; <span class="el_source">Radio.java</span></div><h1>Radio.java</h1><pre class="source lang-java linenums">package ru.netology.radioman;
+
+import java.security.PrivateKey;
+
+<span class="fc" id="L5">public class Radio {</span>
+    private int currentNumberStation;
+    private int currentSoundVolume;
+
+    public void setCurrentNumberStation(int currentNumberStation) {
+<span class="fc" id="L10">        this.currentNumberStation = currentNumberStation;</span>
+<span class="fc" id="L11">    }</span>
+
+    public int getCurrentNumberStation() {
+<span class="fc" id="L14">        return currentNumberStation;</span>
+    }
+
+    public void setCurrentSoundVolume(int currentSoundVolume) {
+<span class="fc" id="L18">        this.currentSoundVolume = currentSoundVolume;</span>
+<span class="fc" id="L19">    }</span>
+
+    public int getCurrentSoundVolume() {
+<span class="fc" id="L22">        return currentSoundVolume;</span>
+    }
+
+    public void numberStationNext() {
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (currentNumberStation == 9) {</span>
+<span class="fc" id="L27">            this.currentNumberStation = 0;</span>
+<span class="fc" id="L28">            return;</span>
+        }
+<span class="fc" id="L30">        currentNumberStation++;</span>
+
+<span class="fc" id="L32">    }</span>
+
+
+    public void volumeStationUp() {
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (currentSoundVolume &gt;= 10) {</span>
+<span class="fc" id="L37">            currentSoundVolume = 10;</span>
+        } else {
+<span class="fc" id="L39">            currentSoundVolume++;</span>
+        }
+
+<span class="fc" id="L42">    }</span>
+
+    public void volumeStationDown() {
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (currentSoundVolume &lt;= 0) {</span>
+<span class="fc" id="L46">            currentSoundVolume = 0;</span>
+        } else {
+<span class="fc" id="L48">            currentSoundVolume--;</span>
+        }
+<span class="fc" id="L50">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
