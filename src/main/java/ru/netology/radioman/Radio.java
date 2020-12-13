@@ -24,24 +24,18 @@ public class Radio {
     public void numberStationNext() {
         if (currentNumberStation == 9) {
             this.currentNumberStation = 0;
-            return;}
+            return;
+        }
         currentNumberStation++;
-        return;
     }
 
-    public void numberStationPrev() {
-        if (currentNumberStation == 0) currentNumberStation = 10;
-        currentNumberStation--;
-        return;
-    }
+
 
     public void volumeStationUp() {
         if (currentSoundVolume >= 10) {
             currentSoundVolume = 10;
-            return;
         } else {
             currentSoundVolume++;
-            return;
         }
 
     }
@@ -49,10 +43,8 @@ public class Radio {
     public void volumeStationDown() {
         if (currentSoundVolume <= 0) {
             currentSoundVolume = 0;
-            return;
         } else {
             currentSoundVolume--;
-            return;
         }
     }
 }
