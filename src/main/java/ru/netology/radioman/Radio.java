@@ -1,9 +1,8 @@
-package ru.netology.radioman;
-
-import java.security.PrivateKey;
+package ru.netology;
 
 public class Radio {
     private int currentNumberStation;
+    private int enterNumberStation;
     private int currentSoundVolume;
 
     public void setCurrentNumberStation(int currentNumberStation) {
@@ -28,8 +27,8 @@ public class Radio {
             return;
         }
         currentNumberStation++;
-
     }
+
 
 
     public void volumeStationUp() {

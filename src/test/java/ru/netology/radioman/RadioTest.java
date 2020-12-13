@@ -1,4 +1,5 @@
-package ru.netology.radioman;
+package ru.netology;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -6,13 +7,13 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
-    private  Radio newRadio = new Radio();
-
+private  Radio newRadio = new Radio();
     @Test
-    public void numberStationEnter() {
-        int enterNumberStation = 7;
+    public void numberStationEntered() {
+        int enteredNumberStation = 7;
         int expected = 7;
-        newRadio.setCurrentNumberStation(enterNumberStation);
+
+        newRadio.setCurrentNumberStation(enteredNumberStation);
         int actual = newRadio.getCurrentNumberStation();
         assertEquals(expected, actual);
     }
@@ -34,9 +35,9 @@ class RadioTest {
 
     @ParameterizedTest
     @CsvSource({
-            "volumeUpFrom_0,0,1",
-            "volumeUpFrom_5,5,6",
-            "volumeUpFrom_max,10,10"
+            "volumeUp_0,0,1",
+            "volumeUp_5,5,6",
+            "volumeUp_max,10,10"
 
     })
     public void volumeStationUp(String name, int currentSoundVolume, int expected) {
@@ -61,3 +62,4 @@ class RadioTest {
         assertEquals(expected, actual);
     }
 }
+
