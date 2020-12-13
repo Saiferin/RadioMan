@@ -1,5 +1,4 @@
-package ru.netology;
-
+package ru.netology.radioman;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -7,14 +6,14 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
+    private  Radio newRadio = new Radio();
 
     @Test
-    public void numberStationEntered() {
-        int enteredNumberStation = 7;
+    public void numberStationEnter() {
+        int enterNumberStation = 7;
         int expected = 7;
-        Radio station = new Radio();
-        station.setCurrentNumberStation(enteredNumberStation);
-        int actual = station.getCurrentNumberStation();
+        newRadio.setCurrentNumberStation(enterNumberStation);
+        int actual = newRadio.getCurrentNumberStation();
         assertEquals(expected, actual);
     }
 
@@ -25,26 +24,26 @@ class RadioTest {
             "NumberStationForward,9,0",
     })
     public void numberStationNext(String name, int currentNumberStation, int expected) {
-        Radio station = new Radio();
-        station.setCurrentNumberStation(currentNumberStation);
-        station.numberStationNext();
-        int actual = station.getCurrentNumberStation();
+
+        newRadio.setCurrentNumberStation(currentNumberStation);
+        newRadio.numberStationNext();
+        int actual = newRadio.getCurrentNumberStation();
         assertEquals(expected, actual);
     }
 
 
     @ParameterizedTest
     @CsvSource({
-            "volumeUp_0,0,1",
-            "volumeUp_5,5,6",
-            "volumeUp_max,10,10"
+            "volumeUpFrom_0,0,1",
+            "volumeUpFrom_5,5,6",
+            "volumeUpFrom_max,10,10"
 
     })
     public void volumeStationUp(String name, int currentSoundVolume, int expected) {
-        Radio station = new Radio();
-        station.setCurrentSoundVolume(currentSoundVolume);
-        station.volumeStationUp();
-        int actual = station.getCurrentSoundVolume();
+
+        newRadio.setCurrentSoundVolume(currentSoundVolume);
+        newRadio.volumeStationUp();
+        int actual = newRadio.getCurrentSoundVolume();
         assertEquals(expected, actual);
     }
 
@@ -54,12 +53,11 @@ class RadioTest {
             "volumeDown_6,6,5",
             "volumeDown_min,0,0"
     })
-    public void volumeStationDoun(String name, int currentSoundVolume, int expected) {
-        Radio station = new Radio();
-        station.setCurrentSoundVolume(currentSoundVolume);
-        station.volumeStationDown();
-        int actual = station.getCurrentSoundVolume();
+    public void volumeStationDown(String name, int currentSoundVolume, int expected) {
+
+        newRadio.setCurrentSoundVolume(currentSoundVolume);
+        newRadio.volumeStationDown();
+        int actual = newRadio.getCurrentSoundVolume();
         assertEquals(expected, actual);
     }
 }
-
